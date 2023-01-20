@@ -8,6 +8,7 @@
     "src:build": "tsc",
     "src:watch": "tsc -w",
     "starters:build": "node ./bin/navify-starters build",
+    "starters:deploy": "copy *.html build && firebase deploy",
     "starters:find-redundant": "node ./bin/navify-starters find-redundant",
     "starters:generate-checksum": "node ./bin/navify-starters generate-checksum",
     "build": "npm run src:build && npm run starters:build"
