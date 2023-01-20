@@ -1,0 +1,35 @@
+{
+  "name": "navify-app-base",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "kdu-cli-service serve",
+    "build": "kdu-cli-service build",
+    "lint": "kdu-cli-service lint"
+  },
+  "dependencies": {
+    "@navify/kdu": "^6.4.0",
+    "@navify/kdu-router": "^6.4.0",
+    "kdu": "^3.2.38",
+    "kdu-router": "^4.0.16",
+    "core-js": "^3.6.5",
+    "navicons": "^6.0.4"
+  },
+  "devDependencies": {
+    "@kdujs/cli-plugin-babel": "~5.0.10",
+    "@kdujs/cli-plugin-eslint": "~5.0.10",
+    "@kdujs/cli-plugin-router": "~5.0.10",
+    "@kdujs/cli-plugin-typescript": "~5.0.10",
+    "@kdujs/cli-service": "~5.0.10",
+    "@kdujs/eslint-config-typescript": "^9.1.0",
+    "@types/jest": "^27.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "babel-jest": "^27.3.1",
+    "eslint": "^8.4.1",
+    "eslint-plugin-kdu": "^8.0.3",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.3.5"
+  }
+}

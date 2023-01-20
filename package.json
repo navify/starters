@@ -1,0 +1,76 @@
+{
+  "private": true,
+  "scripts": {
+    "src:clean": "rimraf dist",
+    "src:lint": "npm run eslint",
+    "src:lint:fix": "npm run eslint -- --fix",
+    "eslint": "eslint . --ext .ts",
+    "src:build": "tsc",
+    "src:watch": "tsc -w",
+    "starters:build": "node ./bin/navify-starters build",
+    "starters:find-redundant": "node ./bin/navify-starters find-redundant",
+    "starters:generate-checksum": "node ./bin/navify-starters generate-checksum",
+    "build": "npm run src:build && npm run starters:build"
+  },
+  "main": "./dist/index.js",
+  "devDependencies": {
+    "@navify/cli-framework": "^5.1.9",
+    "@navify/prettier-config": "^2.0.0",
+    "@navify/utils-array": "^2.1.11",
+    "@navify/utils-fs": "^3.1.12",
+    "@types/fs-extra": "^9.0.13",
+    "@types/inquirer": "9.0.1",
+    "@types/lodash": "^4.14.183",
+    "@types/minimatch": "^3.0.5",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.7.6",
+    "@types/tar": "^6.1.2",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
+    "aws-sdk": "^2.1197.0",
+    "colorette": "^2.0.19",
+    "cross-spawn": "^7.0.3",
+    "eslint": "^8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^3.1.0",
+    "lodash": "^4.17.21",
+    "minimatch": "^5.1.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "tar": "^6.1.11",
+    "typescript": "^4.7",
+    "typescript-eslint-language-service": "^5.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run src:lint"
+    }
+  },
+  "prettier": "@navify/prettier-config",
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "ignorePatterns": [
+      "node_modules",
+      "**/*.d.ts",
+      "kdu",
+      "react",
+      "integrations",
+      "navify1",
+      "dist",
+      "build"
+    ]
+  }
+}

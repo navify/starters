@@ -1,0 +1,23 @@
+<template>
+  <nav-page>
+    <nav-header>
+      <nav-toolbar>
+        <nav-title>Tab 2</nav-title>
+      </nav-toolbar>
+    </nav-header>
+    <nav-content :fullscreen="true">
+      <nav-header collapse="condense">
+        <nav-toolbar>
+          <nav-title size="large">Tab 2</nav-title>
+        </nav-toolbar>
+      </nav-header>
+
+      <ExploreContainer name="Tab 2 page" />
+    </nav-content>
+  </nav-page>
+</template>
+
+<script setup lang="ts">
+import { NavPage, NavHeader, NavToolbar, NavTitle, NavContent } from '@navify/kdu';
+import ExploreContainer from '@/components/ExploreContainer.kdu';
+</script>

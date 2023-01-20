@@ -1,0 +1,236 @@
+/* Navify Variables and Theming. For more info, please see:
+http://navifyframework.web.app/docs/theming/ */
+
+/** Navify CSS Variables **/
+:root {
+  /** primary **/
+  --nav-color-primary: #3880ff;
+  --nav-color-primary-rgb: 56, 128, 255;
+  --nav-color-primary-contrast: #ffffff;
+  --nav-color-primary-contrast-rgb: 255, 255, 255;
+  --nav-color-primary-shade: #3171e0;
+  --nav-color-primary-tint: #4c8dff;
+
+  /** secondary **/
+  --nav-color-secondary: #3dc2ff;
+  --nav-color-secondary-rgb: 61, 194, 255;
+  --nav-color-secondary-contrast: #ffffff;
+  --nav-color-secondary-contrast-rgb: 255, 255, 255;
+  --nav-color-secondary-shade: #36abe0;
+  --nav-color-secondary-tint: #50c8ff;
+
+  /** tertiary **/
+  --nav-color-tertiary: #5260ff;
+  --nav-color-tertiary-rgb: 82, 96, 255;
+  --nav-color-tertiary-contrast: #ffffff;
+  --nav-color-tertiary-contrast-rgb: 255, 255, 255;
+  --nav-color-tertiary-shade: #4854e0;
+  --nav-color-tertiary-tint: #6370ff;
+
+  /** success **/
+  --nav-color-success: #2dd36f;
+  --nav-color-success-rgb: 45, 211, 111;
+  --nav-color-success-contrast: #ffffff;
+  --nav-color-success-contrast-rgb: 255, 255, 255;
+  --nav-color-success-shade: #28ba62;
+  --nav-color-success-tint: #42d77d;
+
+  /** warning **/
+  --nav-color-warning: #ffc409;
+  --nav-color-warning-rgb: 255, 196, 9;
+  --nav-color-warning-contrast: #000000;
+  --nav-color-warning-contrast-rgb: 0, 0, 0;
+  --nav-color-warning-shade: #e0ac08;
+  --nav-color-warning-tint: #ffca22;
+
+  /** danger **/
+  --nav-color-danger: #eb445a;
+  --nav-color-danger-rgb: 235, 68, 90;
+  --nav-color-danger-contrast: #ffffff;
+  --nav-color-danger-contrast-rgb: 255, 255, 255;
+  --nav-color-danger-shade: #cf3c4f;
+  --nav-color-danger-tint: #ed576b;
+
+  /** dark **/
+  --nav-color-dark: #222428;
+  --nav-color-dark-rgb: 34, 36, 40;
+  --nav-color-dark-contrast: #ffffff;
+  --nav-color-dark-contrast-rgb: 255, 255, 255;
+  --nav-color-dark-shade: #1e2023;
+  --nav-color-dark-tint: #383a3e;
+
+  /** medium **/
+  --nav-color-medium: #92949c;
+  --nav-color-medium-rgb: 146, 148, 156;
+  --nav-color-medium-contrast: #ffffff;
+  --nav-color-medium-contrast-rgb: 255, 255, 255;
+  --nav-color-medium-shade: #808289;
+  --nav-color-medium-tint: #9d9fa6;
+
+  /** light **/
+  --nav-color-light: #f4f5f8;
+  --nav-color-light-rgb: 244, 245, 248;
+  --nav-color-light-contrast: #000000;
+  --nav-color-light-contrast-rgb: 0, 0, 0;
+  --nav-color-light-shade: #d7d8da;
+  --nav-color-light-tint: #f5f6f9;
+}
+
+@media (prefers-color-scheme: dark) {
+  /*
+   * Dark Colors
+   * -------------------------------------------
+   */
+
+  body {
+    --nav-color-primary: #428cff;
+    --nav-color-primary-rgb: 66,140,255;
+    --nav-color-primary-contrast: #ffffff;
+    --nav-color-primary-contrast-rgb: 255,255,255;
+    --nav-color-primary-shade: #3a7be0;
+    --nav-color-primary-tint: #5598ff;
+
+    --nav-color-secondary: #50c8ff;
+    --nav-color-secondary-rgb: 80,200,255;
+    --nav-color-secondary-contrast: #ffffff;
+    --nav-color-secondary-contrast-rgb: 255,255,255;
+    --nav-color-secondary-shade: #46b0e0;
+    --nav-color-secondary-tint: #62ceff;
+
+    --nav-color-tertiary: #6a64ff;
+    --nav-color-tertiary-rgb: 106,100,255;
+    --nav-color-tertiary-contrast: #ffffff;
+    --nav-color-tertiary-contrast-rgb: 255,255,255;
+    --nav-color-tertiary-shade: #5d58e0;
+    --nav-color-tertiary-tint: #7974ff;
+
+    --nav-color-success: #2fdf75;
+    --nav-color-success-rgb: 47,223,117;
+    --nav-color-success-contrast: #000000;
+    --nav-color-success-contrast-rgb: 0,0,0;
+    --nav-color-success-shade: #29c467;
+    --nav-color-success-tint: #44e283;
+
+    --nav-color-warning: #ffd534;
+    --nav-color-warning-rgb: 255,213,52;
+    --nav-color-warning-contrast: #000000;
+    --nav-color-warning-contrast-rgb: 0,0,0;
+    --nav-color-warning-shade: #e0bb2e;
+    --nav-color-warning-tint: #ffd948;
+
+    --nav-color-danger: #ff4961;
+    --nav-color-danger-rgb: 255,73,97;
+    --nav-color-danger-contrast: #ffffff;
+    --nav-color-danger-contrast-rgb: 255,255,255;
+    --nav-color-danger-shade: #e04055;
+    --nav-color-danger-tint: #ff5b71;
+
+    --nav-color-dark: #f4f5f8;
+    --nav-color-dark-rgb: 244,245,248;
+    --nav-color-dark-contrast: #000000;
+    --nav-color-dark-contrast-rgb: 0,0,0;
+    --nav-color-dark-shade: #d7d8da;
+    --nav-color-dark-tint: #f5f6f9;
+
+    --nav-color-medium: #989aa2;
+    --nav-color-medium-rgb: 152,154,162;
+    --nav-color-medium-contrast: #000000;
+    --nav-color-medium-contrast-rgb: 0,0,0;
+    --nav-color-medium-shade: #86888f;
+    --nav-color-medium-tint: #a2a4ab;
+
+    --nav-color-light: #222428;
+    --nav-color-light-rgb: 34,36,40;
+    --nav-color-light-contrast: #ffffff;
+    --nav-color-light-contrast-rgb: 255,255,255;
+    --nav-color-light-shade: #1e2023;
+    --nav-color-light-tint: #383a3e;
+  }
+
+  /*
+   * iOS Dark Theme
+   * -------------------------------------------
+   */
+
+  .ios body {
+    --nav-background-color: #000000;
+    --nav-background-color-rgb: 0,0,0;
+
+    --nav-text-color: #ffffff;
+    --nav-text-color-rgb: 255,255,255;
+
+    --nav-color-step-50: #0d0d0d;
+    --nav-color-step-100: #1a1a1a;
+    --nav-color-step-150: #262626;
+    --nav-color-step-200: #333333;
+    --nav-color-step-250: #404040;
+    --nav-color-step-300: #4d4d4d;
+    --nav-color-step-350: #595959;
+    --nav-color-step-400: #666666;
+    --nav-color-step-450: #737373;
+    --nav-color-step-500: #808080;
+    --nav-color-step-550: #8c8c8c;
+    --nav-color-step-600: #999999;
+    --nav-color-step-650: #a6a6a6;
+    --nav-color-step-700: #b3b3b3;
+    --nav-color-step-750: #bfbfbf;
+    --nav-color-step-800: #cccccc;
+    --nav-color-step-850: #d9d9d9;
+    --nav-color-step-900: #e6e6e6;
+    --nav-color-step-950: #f2f2f2;
+
+    --nav-item-background: #000000;
+
+    --nav-card-background: #1c1c1d;
+  }
+
+  .ios nav-modal {
+    --nav-background-color: var(--nav-color-step-100);
+    --nav-toolbar-background: var(--nav-color-step-150);
+    --nav-toolbar-border-color: var(--nav-color-step-250);
+  }
+
+
+  /*
+   * Material Design Dark Theme
+   * -------------------------------------------
+   */
+
+  .md body {
+    --nav-background-color: #121212;
+    --nav-background-color-rgb: 18,18,18;
+
+    --nav-text-color: #ffffff;
+    --nav-text-color-rgb: 255,255,255;
+
+    --nav-border-color: #222222;
+
+    --nav-color-step-50: #1e1e1e;
+    --nav-color-step-100: #2a2a2a;
+    --nav-color-step-150: #363636;
+    --nav-color-step-200: #414141;
+    --nav-color-step-250: #4d4d4d;
+    --nav-color-step-300: #595959;
+    --nav-color-step-350: #656565;
+    --nav-color-step-400: #717171;
+    --nav-color-step-450: #7d7d7d;
+    --nav-color-step-500: #898989;
+    --nav-color-step-550: #949494;
+    --nav-color-step-600: #a0a0a0;
+    --nav-color-step-650: #acacac;
+    --nav-color-step-700: #b8b8b8;
+    --nav-color-step-750: #c4c4c4;
+    --nav-color-step-800: #d0d0d0;
+    --nav-color-step-850: #dbdbdb;
+    --nav-color-step-900: #e7e7e7;
+    --nav-color-step-950: #f3f3f3;
+
+    --nav-item-background: #1e1e1e;
+
+    --nav-toolbar-background: #1f1f1f;
+
+    --nav-tab-bar-background: #1f1f1f;
+
+    --nav-card-background: #1e1e1e;
+  }
+}

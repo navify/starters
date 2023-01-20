@@ -1,0 +1,49 @@
+<template>
+  <nav-page>
+    <nav-header :translucent="true">
+      <nav-toolbar>
+        <nav-title>Inbox</nav-title>
+      </nav-toolbar>
+    </nav-header>
+
+    <nav-content :fullscreen="true">
+      <nav-refresher slot="fixed" @navRefresh="refresh($event)">
+        <nav-refresher-content></nav-refresher-content>
+      </nav-refresher>
+
+      <nav-header collapse="condense">
+        <nav-toolbar>
+          <nav-title size="large">Inbox</nav-title>
+        </nav-toolbar>
+      </nav-header>
+
+      <nav-list>
+        <MessageListItem k-for="message in messages" :key="message.id" :message="message" />
+      </nav-list>
+    </nav-content>
+  </nav-page>
+</template>
+
+<script setup lang="ts">
+import {
+  NavContent,
+  NavHeader,
+  NavList,
+  NavPage,
+  NavRefresher,
+  NavRefresherContent,
+  NavTitle,
+  NavToolbar,
+} from '@navify/kdu';
+import MessageListItem from '@/components/MessageListItem.kdu';
+import { getMessages, Message } from '@/data/messages';
+import { ref } from 'kdu';
+
+const messages = ref<Message[]>(getMessages());
+
+const refresh = (ev: CustomEvent) => {
+  setTimeout(() => {
+    ev.detail.complete();
+  }, 3000);
+};
+</script>

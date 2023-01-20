@@ -1,0 +1,59 @@
+nav-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+
+nav-label {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+nav-item h2 {
+  font-weight: 600;
+  margin: 0;
+}
+
+nav-item p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 95%;
+}
+
+nav-item .date {
+  float: right;
+  align-items: center;
+  display: flex;
+}
+
+nav-item nav-icon {
+  color: #c9c9ca;
+}
+
+nav-item nav-note {
+  font-size: 15px;
+  margin-right: 8px;
+  font-weight: normal;
+}
+
+nav-item nav-note.md {
+  margin-right: 14px;
+}
+
+.dot {
+  display: block;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  align-self: start;
+  margin: 16px 10px 16px 16px;
+}
+
+.dot-unread {
+  background: var(--nav-color-primary);
+}
+
+nav-footer nav-title {
+  font-size: 11px;
+  font-weight: normal;
+}

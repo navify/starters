@@ -1,0 +1,28 @@
+<template>
+  <nav-page>
+    <nav-tabs>
+      <nav-router-outlet></nav-router-outlet>
+      <nav-tab-bar slot="bottom">
+        <nav-tab-button tab="tab1" href="/tabs/tab1">
+          <nav-icon :icon="triangle" />
+          <nav-label>Tab 1</nav-label>
+        </nav-tab-button>
+
+        <nav-tab-button tab="tab2" href="/tabs/tab2">
+          <nav-icon :icon="ellipse" />
+          <nav-label>Tab 2</nav-label>
+        </nav-tab-button>
+
+        <nav-tab-button tab="tab3" href="/tabs/tab3">
+          <nav-icon :icon="square" />
+          <nav-label>Tab 3</nav-label>
+        </nav-tab-button>
+      </nav-tab-bar>
+    </nav-tabs>
+  </nav-page>
+</template>
+
+<script setup lang="ts">
+import { NavTabBar, NavTabButton, NavTabs, NavLabel, NavIcon, NavPage, NavRouterOutlet } from '@navify/kdu';
+import { ellipse, square, triangle } from 'navicons/icons';
+</script>

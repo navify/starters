@@ -1,0 +1,113 @@
+nav-menu nav-content {
+  --background: var(--nav-item-background, var(--nav-background-color, #fff));
+}
+
+nav-menu.md nav-content {
+  --padding-start: 8px;
+  --padding-end: 8px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+}
+
+nav-menu.md nav-list {
+  padding: 20px 0;
+}
+
+nav-menu.md nav-note {
+  margin-bottom: 30px;
+}
+
+nav-menu.md nav-list-header, nav-menu.md nav-note {
+  padding-left: 10px;
+}
+
+nav-menu.md nav-list#inbox-list {
+  border-bottom: 1px solid var(--nav-color-step-150, #d7d8da);
+}
+
+nav-menu.md nav-list#inbox-list nav-list-header {
+  font-size: 22px;
+  font-weight: 600;
+  min-height: 20px;
+}
+
+nav-menu.md nav-list#labels-list nav-list-header {
+  font-size: 16px;
+  margin-bottom: 18px;
+  color: #757575;
+  min-height: 26px;
+}
+
+nav-menu.md nav-item {
+  --padding-start: 10px;
+  --padding-end: 10px;
+  border-radius: 4px;
+}
+
+nav-menu.md nav-item.selected {
+  --background: rgba(var(--nav-color-primary-rgb), 0.14);
+}
+
+nav-menu.md nav-item.selected nav-icon {
+  color: var(--nav-color-primary);
+}
+
+nav-menu.md nav-item nav-icon {
+  color: #616e7e;
+}
+
+nav-menu.md nav-item nav-label {
+  font-weight: 500;
+}
+
+nav-menu.ios nav-content {
+  --padding-bottom: 20px;
+}
+
+nav-menu.ios nav-list {
+  padding: 20px 0 0 0;
+}
+
+nav-menu.ios nav-note {
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+nav-menu.ios nav-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --min-height: 50px;
+}
+
+nav-menu.ios nav-item nav-icon {
+  font-size: 24px;
+  color: #73849a;
+}
+
+nav-menu.ios nav-item .selected nav-icon {
+  color: var(--nav-color-primary);
+}
+
+nav-menu.ios nav-list#labels-list nav-list-header {
+  margin-bottom: 8px;
+}
+
+nav-menu.ios nav-list-header,
+nav-menu.ios nav-note {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+nav-menu.ios nav-note {
+  margin-bottom: 8px;
+}
+
+nav-note {
+  display: inline-block;
+  font-size: 16px;
+  color: var(--nav-color-medium-shade);
+}
+
+nav-item.selected {
+  --color: var(--nav-color-primary);
+}

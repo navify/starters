@@ -1,0 +1,103 @@
+<template>
+  <nav-page>
+    <nav-header :translucent="true">
+      <nav-toolbar>
+        <nav-buttons slot="start">
+          <nav-back-button :text="getBackButtonText()" default-href="/"></nav-back-button>
+        </nav-buttons>
+      </nav-toolbar>
+    </nav-header>
+
+    <nav-content :fullscreen="true" k-if="message">
+      <nav-item>
+        <nav-icon :icon="personCircle" color="primary"></nav-icon>
+        <nav-label class="nav-text-wrap">
+          <h2>
+            {{ message.fromName }}
+            <span class="date">
+              <nav-note>{{ message.date }}</nav-note>
+            </span>
+          </h2>
+          <h3>To: <nav-note>Me</nav-note></h3>
+        </nav-label>
+      </nav-item>
+
+      <div class="nav-padding">
+        <h1>{{ message.subject }}</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </nav-content>
+  </nav-page>
+</template>
+
+<script setup lang="ts">
+import { useRoute } from 'kdu-router';
+import {
+  NavBackButton,
+  NavButtons,
+  NavContent,
+  NavHeader,
+  NavIcon,
+  NavItem,
+  NavLabel,
+  NavNote,
+  NavPage,
+  NavToolbar,
+} from '@navify/kdu';
+import { personCircle } from 'navicons/icons';
+import { getMessage } from '../data/messages';
+
+const getBackButtonText = () => {
+  const win = window as any;
+  const mode = win && win.Navify && win.Navify.mode;
+  return mode === 'ios' ? 'Inbox' : '';
+};
+
+const route = useRoute();
+const message = getMessage(parseInt(route.params.id as string, 10));
+</script>
+
+<style scoped>
+nav-item {
+  --inner-padding-end: 0;
+  --background: transparent;
+}
+
+nav-label {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+nav-item h2 {
+  font-weight: 600;
+}
+
+nav-item .date {
+  float: right;
+  align-items: center;
+  display: flex;
+}
+
+nav-item nav-icon {
+  font-size: 42px;
+  margin-right: 8px;
+}
+
+nav-item nav-note {
+  font-size: 15px;
+  margin-right: 12px;
+  font-weight: normal;
+}
+
+h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+p {
+  line-height: 22px;
+}
+</style>

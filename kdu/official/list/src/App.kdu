@@ -1,0 +1,9 @@
+<template>
+  <nav-app>
+    <nav-router-outlet />
+  </nav-app>
+</template>
+
+<script setup lang="ts">
+import { NavApp, NavRouterOutlet } from '@navify/kdu';
+</script>

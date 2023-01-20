@@ -1,0 +1,233 @@
+<template>
+  <nav-app>
+    <nav-split-pane content-id="main-content">
+      <nav-menu content-id="main-content" type="overlay">
+        <nav-content>
+          <nav-list id="inbox-list">
+            <nav-list-header>Inbox</nav-list-header>
+            <nav-note>kn145660@gmail.com</nav-note>
+
+            <nav-menu-toggle auto-hide="false" k-for="(p, i) in appPages" :key="i">
+              <nav-item @click="selectedIndex = i" router-direction="root" :router-link="p.url" lines="none" detail="false" class="hydrated" :class="{ selected: selectedIndex === i }">
+                <nav-icon slot="start" :ios="p.iosIcon" :md="p.mdIcon"></nav-icon>
+                <nav-label>{{ p.title }}</nav-label>
+              </nav-item>
+            </nav-menu-toggle>
+          </nav-list>
+
+          <nav-list id="labels-list">
+            <nav-list-header>Labels</nav-list-header>
+
+            <nav-item k-for="(label, index) in labels" lines="none" :key="index">
+              <nav-icon slot="start" :ios="bookmarkOutline" :md="bookmarkSharp"></nav-icon>
+              <nav-label>{{ label }}</nav-label>
+            </nav-item>
+          </nav-list>
+        </nav-content>
+      </nav-menu>
+      <nav-router-outlet id="main-content"></nav-router-outlet>
+    </nav-split-pane>
+  </nav-app>
+</template>
+
+<script setup lang="ts">
+import {
+  NavApp,
+  NavContent,
+  NavIcon,
+  NavItem,
+  NavLabel,
+  NavList,
+  NavListHeader,
+  NavMenu,
+  NavMenuToggle,
+  NavNote,
+  NavRouterOutlet,
+  NavSplitPane,
+} from '@navify/kdu';
+import { ref } from 'kdu';
+import {
+  archiveOutline,
+  archiveSharp,
+  bookmarkOutline,
+  bookmarkSharp,
+  heartOutline,
+  heartSharp,
+  mailOutline,
+  mailSharp,
+  paperPlaneOutline,
+  paperPlaneSharp,
+  trashOutline,
+  trashSharp,
+  warningOutline,
+  warningSharp,
+} from 'navicons/icons';
+
+const selectedIndex = ref(0);
+const appPages = [
+  {
+    title: 'Inbox',
+    url: '/folder/Inbox',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp,
+  },
+  {
+    title: 'Outbox',
+    url: '/folder/Outbox',
+    iosIcon: paperPlaneOutline,
+    mdIcon: paperPlaneSharp,
+  },
+  {
+    title: 'Favorites',
+    url: '/folder/Favorites',
+    iosIcon: heartOutline,
+    mdIcon: heartSharp,
+  },
+  {
+    title: 'Archived',
+    url: '/folder/Archived',
+    iosIcon: archiveOutline,
+    mdIcon: archiveSharp,
+  },
+  {
+    title: 'Trash',
+    url: '/folder/Trash',
+    iosIcon: trashOutline,
+    mdIcon: trashSharp,
+  },
+  {
+    title: 'Spam',
+    url: '/folder/Spam',
+    iosIcon: warningOutline,
+    mdIcon: warningSharp,
+  },
+];
+const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+
+const path = window.location.pathname.split('folder/')[1];
+if (path !== undefined) {
+  selectedIndex.value = appPages.findIndex((page) => page.title.toLowerCase() === path.toLowerCase());
+}
+</script>
+
+<style scoped>
+nav-menu nav-content {
+  --background: var(--nav-item-background, var(--nav-background-color, #fff));
+}
+
+nav-menu.md nav-content {
+  --padding-start: 8px;
+  --padding-end: 8px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+}
+
+nav-menu.md nav-list {
+  padding: 20px 0;
+}
+
+nav-menu.md nav-note {
+  margin-bottom: 30px;
+}
+
+nav-menu.md nav-list-header,
+nav-menu.md nav-note {
+  padding-left: 10px;
+}
+
+nav-menu.md nav-list#inbox-list {
+  border-bottom: 1px solid var(--nav-color-step-150, #d7d8da);
+}
+
+nav-menu.md nav-list#inbox-list nav-list-header {
+  font-size: 22px;
+  font-weight: 600;
+
+  min-height: 20px;
+}
+
+nav-menu.md nav-list#labels-list nav-list-header {
+  font-size: 16px;
+
+  margin-bottom: 18px;
+
+  color: #757575;
+
+  min-height: 26px;
+}
+
+nav-menu.md nav-item {
+  --padding-start: 10px;
+  --padding-end: 10px;
+  border-radius: 4px;
+}
+
+nav-menu.md nav-item.selected {
+  --background: rgba(var(--nav-color-primary-rgb), 0.14);
+}
+
+nav-menu.md nav-item.selected nav-icon {
+  color: var(--nav-color-primary);
+}
+
+nav-menu.md nav-item nav-icon {
+  color: #616e7e;
+}
+
+nav-menu.md nav-item nav-label {
+  font-weight: 500;
+}
+
+nav-menu.ios nav-content {
+  --padding-bottom: 20px;
+}
+
+nav-menu.ios nav-list {
+  padding: 20px 0 0 0;
+}
+
+nav-menu.ios nav-note {
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+nav-menu.ios nav-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --min-height: 50px;
+}
+
+nav-menu.ios nav-item.selected nav-icon {
+  color: var(--nav-color-primary);
+}
+
+nav-menu.ios nav-item nav-icon {
+  font-size: 24px;
+  color: #73849a;
+}
+
+nav-menu.ios nav-list#labels-list nav-list-header {
+  margin-bottom: 8px;
+}
+
+nav-menu.ios nav-list-header,
+nav-menu.ios nav-note {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+nav-menu.ios nav-note {
+  margin-bottom: 8px;
+}
+
+nav-note {
+  display: inline-block;
+  font-size: 16px;
+
+  color: var(--nav-color-medium-shade);
+}
+
+nav-item.selected {
+  --color: var(--nav-color-primary);
+}
+</style>
